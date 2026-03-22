@@ -8,5 +8,9 @@ export default defineConfig({
     port: 3000,
     open: true
   },
-   base: '/Wzzj.github.io/'
+  base: '/Wzzj.github.io/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 })
