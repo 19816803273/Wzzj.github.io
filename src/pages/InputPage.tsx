@@ -15,7 +15,6 @@ const InputPage: React.FC = () => {
   const [difficulty, setDifficulty] = useState<Difficulty>('中等');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [showPreview, setShowPreview] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

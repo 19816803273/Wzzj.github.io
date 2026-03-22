@@ -1,12 +1,11 @@
 import { useApp } from '../context/AppContext';
-import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Subject } from '../types';
+import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 const COLORS = ['#3b82f6', '#8b5cf6', '#10b981'];
 const MASTERY_COLORS = { '未掌握': '#ef4444', '部分掌握': '#f59e0b', '已掌握': '#10b981' };
 
 const StatsPage: React.FC = () => {
-  const { statistics, questions } = useApp();
+  const { statistics } = useApp();
 
   const subjectData = Object.entries(statistics.subjectDistribution)
     .filter(([_, count]) => count > 0)
@@ -102,7 +101,7 @@ const StatsPage: React.FC = () => {
                   fill="#8884d8"
                   dataKey="count"
                 >
-                  {subjectData.map((entry, index) => (
+                  {subjectData.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>

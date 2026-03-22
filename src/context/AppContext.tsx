@@ -5,7 +5,7 @@ interface AppContextType {
   questions: WrongQuestion[];
   topics: StudyTopic[];
   statistics: Statistics;
-  addQuestion: (question: Omit<WrongQuestion>) => void;
+  addQuestion: (question: Omit<WrongQuestion, 'id'>) => void;
   updateQuestion: (id: string, question: Partial<WrongQuestion>) => void;
   deleteQuestion: (id: string) => void;
   generateTopics: () => void;
